@@ -15,6 +15,9 @@ claude-md-shared/
 │   ├── mech.md            # 機械設計系
 │   ├── agent.md           # エージェント開発系
 │   └── game.md            # ゲーム開発系
+├── commands/              # ~/.claude/commands/ にコピーして使うスラッシュコマンド
+│   ├── list-rules.md
+│   └── toggle-rule.md
 └── inbox/                 # /promote コマンドの一時置き場(将来用)
 ```
 
@@ -113,7 +116,12 @@ test -d /home/bacon/claude-md-shared || \
 
 #### 3. スラッシュコマンドを配置
 
-`~/.claude/commands/list-rules.md` と `~/.claude/commands/toggle-rule.md` が無い場合、このリポの README に書かれた仕様を参考に作成する。または、ユーザーに `/home/bacon/claude-md-shared` リポを参照する手段がある別マシンからコピーする。
+```bash
+mkdir -p ~/.claude/commands
+cp /home/bacon/claude-md-shared/commands/*.md ~/.claude/commands/
+```
+
+(既に同名ファイルがある場合は内容を比較してからユーザーに上書き可否を確認すること)
 
 #### 4. プロジェクト固有の domain を有効化(任意)
 
